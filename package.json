@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "HTML to native component.",
   "main": "index.js",
-  "repository": "https://github.com/TiagoHellebrandt/react-native-htmlviewer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TiagoHellebrandt/react-native-htmlviewer"
+  },
+  "bugs": {
+      "url": "https://github.com/TiagoHellebrandt/react-native-htmlviewer/issues"
+  },
   "keywords": [
     "react-native",
     "react-component",
@@ -16,11 +22,13 @@
     "html",
     "converter",
     "html to component",
-    "htmlview"
+    "htmlview",
+    "render html"
   ],
   "author": "Tiago Hellebrandt <thellebrandtsilva@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "entities": "^2.0.0",
     "htmlparser2": "^3.10.1"
   },
   "devDependencies": {
