@@ -15,8 +15,8 @@ export default class HTMLViewer extends Component {
             customProps: props.customProps || {},
             renderers: {
                 default: require('./renderers/default'),
-                p: require('./renderers/p'),
                 img: require('./renderers/img'),
+                p: require('./renderers/p'),
                 b: require('./renderers/b'),
                 strong: require('./renderers/strong'),
                 i: require('./renderers/i'),
@@ -43,7 +43,7 @@ export default class HTMLViewer extends Component {
             let el = dom.map((e, i) => this.renderComponent(e, i));
             this.setState({ el });
         });
-        
+
         const parser = new htmlparser.Parser(handler);
         parser.write(this.props.html);
         parser.done();
@@ -54,15 +54,16 @@ export default class HTMLViewer extends Component {
             ...this.state.renderers,
             ...this.state.customRenderers
         };
-        
+
         let { customProps } = this.state;
 
+        console.log(e.type)
         switch (e.type) {
             case 'tag':
                 const Comp = (renderers[e.name] || renderers["default"]).default;
-                
+
                 return (
-                    <Comp 
+                    <Comp
                         key={i}
                         renderComponent={this.renderComponent}
                         element={e}
@@ -70,19 +71,21 @@ export default class HTMLViewer extends Component {
                         {...(customProps[e.name] || customProps["default"])}
                     />
                 );
-            
+
             case 'text':
                 return entities.decodeHTML(e.data).split(' ').map((text, j) => (
-                    <Text key={`${i}_${j}`} style={[{marginRight: 3}, style]}>
-                        {text}
-                    </Text>
+                    <View>
+                        <Text key={`${i}_${j}`} style={[{ marginRight: 3, margin: 0 }, style]}>
+                            {text}
+                        </Text>
+                    </View>
                 ));
         }
     };
 
     render() {
         return (
-            <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
+            <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
                 {this.state.el}
             </View>
         );
