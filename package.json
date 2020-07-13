@@ -1,6 +1,6 @@
 {
   "name": "react-native-htmlviewer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "HTML to native component.",
   "main": "index.js",
   "repository": {
