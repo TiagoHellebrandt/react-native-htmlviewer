@@ -51,13 +51,13 @@ export default class HTMLViewer extends Component {
 
     renderComponent = (e, i, style = {}) => {
         let renderers = {
+            
             ...this.state.renderers,
             ...this.state.customRenderers
         };
 
         let { customProps } = this.state;
 
-        console.log(e.type)
         switch (e.type) {
             case 'tag':
                 const Comp = (renderers[e.name] || renderers["default"]).default;
