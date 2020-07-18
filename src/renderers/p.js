@@ -8,6 +8,8 @@ export default class RenderP extends Component {
                 flexDirection: 'row',
                 flexWrap: 'wrap',
                 width: '100%',
+                marginVertical: 5,
+                padding: 0
             }}>
                 <>
                     {this.props.element.children.map(
