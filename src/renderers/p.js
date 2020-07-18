@@ -11,11 +11,13 @@ export default class RenderP extends Component {
                 marginVertical: 5,
                 padding: 0
             }}>
-                {this.props.element.children.map(
-                    (e, i) => this.props.renderComponent(e, i, {
-                        ...this.props.style
-                    })
-                )}
+                <>
+                    {this.props.element.children.map(
+                        (e, i) => this.props.renderComponent(e, i, {
+                            ...this.props.style
+                        })
+                    )}
+                </>
             </View>
         );
     }
