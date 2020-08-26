@@ -8,7 +8,6 @@ export default class RenderBr extends Component {
                 flexDirection: 'row',
                 flexWrap: 'wrap',
                 width: '100%',
-                height: '10%',
                 padding: 0
             }}></View>
         );
