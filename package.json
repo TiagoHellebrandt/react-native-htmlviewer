@@ -1,6 +1,6 @@
 {
   "name": "react-native-htmlviewer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "HTML to native component.",
   "main": "index.js",
   "repository": {
@@ -9,6 +9,9 @@
   },
   "bugs": {
     "url": "https://github.com/TiagoHellebrandt/react-native-htmlviewer/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "keywords": [
     "react-native",
@@ -26,12 +29,18 @@
     "render html"
   ],
   "author": "Tiago Hellebrandt <thellebrandtsilva@gmail.com>",
+  "contributors": [{
+      "name" : "Aroldo Goulart",
+      "email" : "aroldogooulart@gmail.com",
+      "url" : "https://github.com/SnowLew"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "buffer": "^5.2.1",
-    "entities": "^2.0.0",
-    "events": "^3.0.0",
-    "htmlparser2": "^3.10.1"
+    "entities": "^2.2.0",
+    "events": "^3.3.0",
+    "htmlparser2": "^6.1.0"
   },
   "devDependencies": {
     "metro-react-native-babel-preset": "^0.55.0"

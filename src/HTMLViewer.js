@@ -73,9 +73,14 @@ export default class HTMLViewer extends Component {
                 );
 
             case 'text':
+                const { customTextStyle } = this.props
+
                 return entities.decodeHTML(e.data).split(' ').map((text, j) => (
                     <View>
-                        <Text key={`${i}_${j}`} style={[{ marginRight: 3, margin: 0 }, style]}>
+                        <Text 
+                            key={`${i}_${j}`}
+                            style={[{ marginRight: 3, margin: 0 }, style, customTextStyle]}
+                        >
                             {text}
                         </Text>
                     </View>
