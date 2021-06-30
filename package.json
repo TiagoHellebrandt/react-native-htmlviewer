@@ -1,6 +1,6 @@
 {
   "name": "react-native-htmlviewer",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "HTML to native component.",
   "main": "index.js",
   "repository": {
@@ -26,7 +26,11 @@
     "converter",
     "html to component",
     "htmlview",
-    "render html"
+    "render html",
+    "html react native",
+    "react native html",
+    "react-native-htmlview",
+    "react-native html viewer"
   ],
   "author": "Tiago Hellebrandt <thellebrandtsilva@gmail.com>",
   "contributors": [{
@@ -43,6 +47,6 @@
     "htmlparser2": "^6.1.0"
   },
   "devDependencies": {
-    "metro-react-native-babel-preset": "^0.55.0"
+    "metro-react-native-babel-preset": "^0.66.0"
   }
 }

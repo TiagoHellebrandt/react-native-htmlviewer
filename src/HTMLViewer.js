@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
-import htmlparser from 'htmlparser2';
+import htmlparser, { DomHandler, Parser } from 'htmlparser2';
 const entities = require("entities");
 
 export default class HTMLViewer extends Component {
@@ -35,7 +35,7 @@ export default class HTMLViewer extends Component {
     }
 
     build = () => {
-        const handler = new htmlparser.DomHandler((err, dom) => {
+        const handler = new DomHandler((err, dom) => {
             if (err) {
                 return console.log(err);
             }
@@ -44,14 +44,23 @@ export default class HTMLViewer extends Component {
             this.setState({ el });
         });
 
-        const parser = new htmlparser.Parser(handler);
+        const parser = new Parser(handler);
         parser.write(this.props.html);
-        parser.done();
+        try  {
+            /* 
+                depreciado
+                parser.done(); 
+            */
+            parser.end()
+        }
+        catch(e) {
+            console.log(`HTMLViewer: ${e.message}`)
+            console.log(e.message)
+        }
     };
 
     renderComponent = (e, i, style = {}) => {
         let renderers = {
-            
             ...this.state.renderers,
             ...this.state.customRenderers
         };
